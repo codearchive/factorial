@@ -6,18 +6,21 @@ namespace Factorial_CSharp
     {
         public static void Main()
         {
-            long InputValueForFactorial = 0;
+            long inputValueForFactorial = 0;
+
             MyFactorial firstMyFactorial = new MyFactorial();
+
             while (true)
             {
                 Console.WriteLine("Enter new positive number to calculate factorial or negative number to quit");
-                InputValueForFactorial = Int32.Parse(Console.ReadLine());
-                if (InputValueForFactorial < 0)
+                inputValueForFactorial = Int32.Parse(Console.ReadLine());
+                if (inputValueForFactorial < 0)
                 {
                     break;
                 }
-                firstMyFactorial.InputValue = InputValueForFactorial;
+                firstMyFactorial.InputValue = inputValueForFactorial;
                 Console.WriteLine($"{firstMyFactorial.InputValue}! = {firstMyFactorial.GetFactorialByLoop()}");
+                Console.WriteLine($"{firstMyFactorial.InputValue}! = {firstMyFactorial.GetFactorialByRecursion(firstMyFactorial.InputValue)}");
             }
         }
     }

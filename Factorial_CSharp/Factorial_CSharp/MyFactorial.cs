@@ -14,18 +14,20 @@
             InputValue = 0;
         }
 
-        //public void GetFactorialByRecursion()
-        //{
-             
-        //}
+        public long GetFactorialByRecursion(long value)
+        {
+            if (value == 0) return 1;
+            return value * GetFactorialByRecursion(value - 1);
+        }
 
         public long GetFactorialByLoop()
         {
             long factorial = 1;
-            while (InputValue != 0)
+            long localValue = InputValue;
+            while (localValue != 0)
             {
-                factorial *= InputValue;
-                InputValue--;
+                factorial *= localValue;
+                localValue--;
             }
 
             return factorial;
@@ -33,5 +35,5 @@
 
     }
 
-    
+
 }

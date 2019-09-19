@@ -32,5 +32,33 @@ namespace Factorial_CSharp.Tests
             // Assert
             Assert.AreEqual(expected, act, message: $"{expected}");
         }
+
+        [TestMethod]
+        public void RecursionMethodTest_0()
+        {
+            // Arrange
+            MyFactorial testValue = new MyFactorial();
+            long expected = testValue.GetFactorialByRecursion(testValue.InputValue);
+
+            // Act 
+            long act = 1;
+
+            // Assert
+            Assert.AreEqual(expected, act, message: $"{expected}");
+        }
+
+        [TestMethod]
+        public void RecursionMethodTest_1()
+        {
+            // Arrange
+            MyFactorial testValue = new MyFactorial();
+            long expected = testValue.GetFactorialByRecursion(testValue.InputValue);
+
+            // Act 
+            long act = 1;
+
+            // Assert
+            Assert.AreEqual(expected, act, message: $"{expected}");
+        }
     }
 }
