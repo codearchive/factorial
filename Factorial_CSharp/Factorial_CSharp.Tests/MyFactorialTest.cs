@@ -10,10 +10,10 @@ namespace Factorial_CSharp.Tests
         {
             // Arrange
             MyFactorial testValue = new MyFactorial(5);
-            int expected = testValue.GetFactorialByLoop();
+            long expected = testValue.GetFactorialByLoop();
 
             // Act 
-            int act = 120;
+            long act = 120;
 
             // Assert
             Assert.AreEqual(expected, act, message: $"{expected}");
@@ -24,10 +24,10 @@ namespace Factorial_CSharp.Tests
         {
             // Arrange
             MyFactorial testValue = new MyFactorial();
-            int expected = testValue.GetFactorialByLoop();
+            long expected = testValue.GetFactorialByLoop();
 
             // Act 
-            int act = 1;
+            long act = 1;
 
             // Assert
             Assert.AreEqual(expected, act, message: $"{expected}");
