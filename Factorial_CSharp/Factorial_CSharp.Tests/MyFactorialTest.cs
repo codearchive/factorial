@@ -6,7 +6,7 @@ namespace Factorial_CSharp.Tests
     public class MyFactorialTest
     {
         [TestMethod]
-        public void LoopMethodTest_0()
+        public void LoopMethodTestWithSpecificNumber()
         {
             // Arrange
             MyFactorial testValue = new MyFactorial(5);
@@ -20,7 +20,7 @@ namespace Factorial_CSharp.Tests
         }
 
         [TestMethod]
-        public void LoopMethodTest_1()
+        public void LoopMethodTessWithZero()
         {
             // Arrange
             MyFactorial testValue = new MyFactorial();
@@ -34,7 +34,7 @@ namespace Factorial_CSharp.Tests
         }
 
         [TestMethod]
-        public void RecursionMethodTest_0()
+        public void RecursionMethodTestWithSpecificNumber()
         {
             // Arrange
             MyFactorial testValue = new MyFactorial();
@@ -48,7 +48,7 @@ namespace Factorial_CSharp.Tests
         }
 
         [TestMethod]
-        public void RecursionMethodTest_1()
+        public void RecursionMethodTestWithZero()
         {
             // Arrange
             MyFactorial testValue = new MyFactorial();
