@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Factorial_CSharp
 {
@@ -21,11 +22,15 @@ namespace Factorial_CSharp
                     break;
                 }
 
+                //Thread thread = new Thread(new ThreadStart(firstMyFactorial.GetFactorialByRecursion()));
+                //thread.Start()
+
+
                 firstMyFactorial.InputValue = inputValueForFactorial;
+                //firstMyFactorial.GetFactorialByLoop();
+                firstMyFactorial.GetFactorialByRecursion();
 
-                Console.WriteLine($"{firstMyFactorial.InputValue}! = {firstMyFactorial.GetFactorialByLoop()}");
-
-                Console.WriteLine($"{firstMyFactorial.InputValue}! = {firstMyFactorial.GetFactorialByRecursion(firstMyFactorial.InputValue)}");
+                Console.WriteLine($"{firstMyFactorial.InputValue}! = {firstMyFactorial.ReturnValue}");
             }
         }
     }

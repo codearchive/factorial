@@ -10,7 +10,8 @@ namespace Factorial_CSharp.Tests
         {
             // Arrange
             MyFactorial testValue = new MyFactorial(5);
-            long expected = testValue.GetFactorialByLoop();
+            testValue.GetFactorialByLoop();
+            long expected = testValue.ReturnValue;
 
             // Act 
             long act = 120;
@@ -24,7 +25,8 @@ namespace Factorial_CSharp.Tests
         {
             // Arrange
             MyFactorial testValue = new MyFactorial();
-            long expected = testValue.GetFactorialByLoop();
+            testValue.GetFactorialByLoop();
+            long expected = testValue.ReturnValue;
 
             // Act 
             long act = 1;
@@ -38,7 +40,8 @@ namespace Factorial_CSharp.Tests
         {
             // Arrange
             MyFactorial testValue = new MyFactorial();
-            long expected = testValue.GetFactorialByRecursion(testValue.InputValue);
+            testValue.GetFactorialByRecursion();
+            long expected = testValue.ReturnValue;
 
             // Act 
             long act = 1;
@@ -52,7 +55,8 @@ namespace Factorial_CSharp.Tests
         {
             // Arrange
             MyFactorial testValue = new MyFactorial();
-            long expected = testValue.GetFactorialByRecursion(testValue.InputValue);
+            testValue.GetFactorialByRecursion();
+            long expected = testValue.ReturnValue;
 
             // Act 
             long act = 1;
