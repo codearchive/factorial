@@ -2,9 +2,9 @@
 {
     public class MyFactorial
     {
-        public int InputValue { get; set; }
+        public long InputValue { get; set; }
 
-        public MyFactorial(int value)
+        public MyFactorial(long value)
         {
             InputValue = value;
         }
@@ -14,14 +14,14 @@
             InputValue = 0;
         }
 
-        public void GetFactorialByRecursion()
-        {
-            
-        }
+        //public void GetFactorialByRecursion()
+        //{
+             
+        //}
 
-        public int GetFactorialByLoop()
+        public long GetFactorialByLoop()
         {
-            int factorial = 1;
+            long factorial = 1;
             while (InputValue != 0)
             {
                 factorial *= InputValue;
