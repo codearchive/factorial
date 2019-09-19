@@ -22,13 +22,13 @@ namespace Factorial_CSharp
                     break;
                 }
 
-                //Thread thread = new Thread(new ThreadStart(firstMyFactorial.GetFactorialByRecursion()));
-                //thread.Start()
-
+               
 
                 firstMyFactorial.InputValue = inputValueForFactorial;
-                //firstMyFactorial.GetFactorialByLoop();
-                firstMyFactorial.GetFactorialByRecursion();
+
+                Thread thread = new Thread(new ThreadStart(firstMyFactorial.GetFactorialByRecursion));
+                thread.Start();
+                thread.Join();
 
                 Console.WriteLine($"{firstMyFactorial.InputValue}! = {firstMyFactorial.ReturnValue}");
             }
