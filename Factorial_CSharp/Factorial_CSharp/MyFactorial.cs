@@ -8,6 +8,8 @@ namespace Factorial_CSharp
 
         public long ReturnValue { get; set; }
 
+        private object x = new object();
+
         public MyFactorial(long value)
         {
             InputValue = value;
@@ -20,25 +22,37 @@ namespace Factorial_CSharp
             ReturnValue = 1;
         }
 
-        public void GetFactorialByRecursion()
+        public void GetFactorialByRecursion(object threadName)
         {
-            ReturnValue = recurFunc(InputValue);
+            ReturnValue = RecurFunc(InputValue);
+            Console.WriteLine($"{(string)threadName}:\t {InputValue}! = {ReturnValue}");
+            lock (x)
+            {
+                InputValue++;
+            }
         }
 
-        public void GetFactorialByLoop()
+        public void GetFactorialByLoop(object threadName)
         {
+            ReturnValue = 1;
             long localValue = InputValue;
             while (localValue != 0)
             {
                 ReturnValue *= localValue;
                 localValue--;
             }
+
+            Console.WriteLine($"{(string)threadName}:\t {InputValue}! = {ReturnValue}");
+            lock (x)
+            {
+                InputValue++;
+            }
         }
 
-        private static readonly Func<long, long> recurFunc = x =>
+        private static readonly Func<long, long> RecurFunc = x =>
         {
             if (x == 0) return 1;
-            return x * recurFunc(x - 1);
+            return x * RecurFunc(x - 1);
         };
     }
 }

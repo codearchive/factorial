@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace Factorial_CSharp
@@ -7,31 +8,24 @@ namespace Factorial_CSharp
     {
         public static void Main()
         {
-            long inputValueForFactorial = 0;
+            Thread t = Thread.CurrentThread;
+            t.Name = "Main Thread";
 
-            MyFactorial firstMyFactorial = new MyFactorial();
+            MyFactorial objMyFactorial = new MyFactorial();
 
-            while (true)
+            while (objMyFactorial.InputValue < 20)
             {
-                Console.WriteLine("Enter new positive number to calculate factorial or negative number to quit");
-
-                inputValueForFactorial = Int32.Parse(Console.ReadLine());
-
-                if (inputValueForFactorial < 0)
+                Thread secondThread = new Thread(new ParameterizedThreadStart(objMyFactorial.GetFactorialByLoop))
                 {
-                    break;
-                }
-
-               
-
-                firstMyFactorial.InputValue = inputValueForFactorial;
-
-                Thread thread = new Thread(new ThreadStart(firstMyFactorial.GetFactorialByRecursion));
-                thread.Start();
-                thread.Join();
-
-                Console.WriteLine($"{firstMyFactorial.InputValue}! = {firstMyFactorial.ReturnValue}");
+                    Name = "Second thread"
+                };
+                secondThread.Start(secondThread.Name);
+                Thread.Sleep(100);
+                objMyFactorial.GetFactorialByLoop(t.Name);
+                Console.WriteLine(Process.GetCurrentProcess().Threads.Count);
             }
+
+            Console.ReadLine();
         }
     }
 }
